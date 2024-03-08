@@ -1,0 +1,16 @@
+{
+    "name": "johns-tools/event-logger",
+    "description": "A laravel package to handle inline event logging via PHP",
+    "type": "logging",
+    "autoload": {
+        "psr-4": {
+            "JohnsTools\\EventLogger\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "John Robinson"
+        }
+    ],
+    "require": {}
+}

@@ -6,7 +6,7 @@ namespace JohnsTools\EventLogger;
 use JohnsTools\EventLogger\Traits\Utilities as EventLoggerUtilities;
 
 // Support Classes
-use JohnsTools\EventLogger\Class\Checks as EventLoggerChecks;
+use JohnsTools\EventLogger\Services\SystemChecks;
 
 class EventLogger
 {
@@ -24,8 +24,8 @@ class EventLogger
     public function __construct(String $identifier, $storageDriver, Array $fileMeta)
     {
         // Checks (static)
-        EventLoggerChecks::checkFileMeta($fileMeta);
-        EventLoggerChecks::checkIdentifier($identifier);
+        SystemChecks::checkFileMeta($fileMeta);
+        SystemChecks::checkIdentifier($identifier);
 
         // After checking, we can now set the required variables local to this class instance.
         $this->identifier = $identifier;

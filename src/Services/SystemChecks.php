@@ -1,11 +1,11 @@
 <?php
 
-namespace JohnsTools\EventLogger\Class;
+namespace JohnsTools\EventLogger\Services;
 
 // Framework
 use Exception;
 
-class Checks
+class SystemChecks
 {
 
     public static function checkFileMeta(Array $fileMeta):void

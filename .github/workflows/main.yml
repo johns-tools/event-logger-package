@@ -4,10 +4,6 @@ on:
   push:
     branches:
       - master
-      
-env:
-  APP_KEY: ${{ secrets.APP_KEY }}
-
 jobs:
   phpunit:
     name: Run PHPUnit
@@ -17,6 +13,3 @@ jobs:
       - uses: actions/checkout@v3
       - uses: php-actions/composer@v6
       - uses: php-actions/phpunit@v3
-
-      - name: Set Laravel APP_KEY
-        run: php -r "file_put_contents('.env', 'APP_KEY=${APP_KEY}\n', FILE_APPEND);"

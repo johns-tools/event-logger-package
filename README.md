@@ -2,4 +2,4 @@ Temp decription:
 A package to create inline event logs, that handle exceptions and error notifications.
 
 TODO:
-Add working CI PhpUnitTests
+Solve issue that stops the GitHub actions working, to action the PhpUnitTests.

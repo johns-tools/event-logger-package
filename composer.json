@@ -12,5 +12,7 @@
             "name": "John Robinson"
         }
     ],
-    "require": {}
+    "require-dev": {
+        "orchestra/testbench": "^8.21"
+    }
 }

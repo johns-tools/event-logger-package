@@ -6,7 +6,8 @@ namespace Tests\Feature;
 use JohnsTools\EventLogger\EventLogger;
 
 // Framework
-use Tests\TestCase;
+// use Tests\TestCase;
+use Orchestra\Testbench\TestCase;
 use Illuminate\Support\Facades\Storage;
 
 class EventLoggerServiceTest extends TestCase

@@ -6,7 +6,7 @@ namespace JohnsTools\EventLogger;
 use JohnsTools\EventLogger\Traits\Utilities as EventLoggerUtilities;
 
 // Support Classes
-use JohnsTools\EventLogger\Services\SystemChecks;
+use JohnsTools\EventLogger\Services\SystemCheckService;
 
 class EventLogger
 {
@@ -24,10 +24,10 @@ class EventLogger
     public function __construct(String $identifier, $storageDriver, Array $fileMeta)
     {
         // Checks (static)
-        SystemChecks::checkFileMeta($fileMeta);
-        SystemChecks::checkIdentifier($identifier);
+        SystemCheckService::checkFileMeta($fileMeta);
+        SystemCheckService::checkIdentifier($identifier);
 
-        // After checking, we can now set the required variables local to this class instance.
+        // After checking, we can now safely set the required variables local to this class instance.
         $this->identifier = $identifier;
         $this->storageDriver = $storageDriver ?? $this->storageDriver;
         $this->fileName = $fileMeta['file_name'];
@@ -44,7 +44,7 @@ class EventLogger
      *
      * @return void
      */
-    public function addEvent(sting $class, string $function, string $message, int $level):void
+    public function addEvent(string $class, string $function, string $message, int $level) : void
     {
         $this->constructEvent(array_merge(
             $this->constructMetaData($class, $function),

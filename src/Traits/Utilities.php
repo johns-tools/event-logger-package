@@ -66,6 +66,8 @@ trait Utilities
 
         $this->log_data = json_encode($this->log_data);
 
+        // This is no longer working!.. Possibly a permissions issue.
+        // Need to debug and have some sort of check in place to detect this issue.
         return Storage::disk($this->storageDriver)->put($logFileName, $this->log_data);
     }
 

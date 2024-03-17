@@ -37,5 +37,6 @@ class EventLogAdminController extends Controller
         $this->eventLogger->addEvent(__CLASS__, __FUNCTION__, $message, $level);
 
         dump("Hello from the event log admin!");
+
     }
 }
